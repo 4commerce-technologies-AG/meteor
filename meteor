@@ -100,7 +100,7 @@ function install_dev_bundle {
 
     # test if we can download the dev_bundle tarball
     function __check_tarball_download() {
-      CHECK_TARBALL=$(curl --head --location --silent "$DEV_BUNDLE_URL_ROOT$TARBALL" --output /dev/null --write-out '%{http_code}')
+      CHECK_TARBALL=$(curl -k --head --location --silent "$DEV_BUNDLE_URL_ROOT$TARBALL" --output /dev/null --write-out '%{http_code}')
       # Write down a message instead doing a false download
       if [ "$CHECK_TARBALL" != "200" ] ; then
         if [ -n "$METEOR_UNIVERSAL_FLAG" ] ; then
@@ -127,11 +127,11 @@ function install_dev_bundle {
     elif [ -n "$SAVE_DEV_BUNDLE_TARBALL" ] ; then
         # URL duplicated in tools/server/target.sh.in
         __check_tarball_download
-        curl --location -# "$DEV_BUNDLE_URL_ROOT$TARBALL" >"$SCRIPT_DIR/$TARBALL"
+        curl -k --location -# "$DEV_BUNDLE_URL_ROOT$TARBALL" >"$SCRIPT_DIR/$TARBALL"
         tar -xzf "$SCRIPT_DIR/$TARBALL" -C "$BUNDLE_TMPDIR"
     else
         __check_tarball_download
-        curl --location -# "$DEV_BUNDLE_URL_ROOT$TARBALL" | tar -xzf - -C "$BUNDLE_TMPDIR"
+        curl -k --location -# "$DEV_BUNDLE_URL_ROOT$TARBALL" | tar -xzf - -C "$BUNDLE_TMPDIR"
     fi
 
     # In case that we have to use the universal system environment, make sure
