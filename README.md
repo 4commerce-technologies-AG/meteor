@@ -37,7 +37,7 @@ bundles are available at our [BINTRAY Repository](https://bintray.com/4commerce-
 ##### This fork is known to work on:
 
 1. UDOO Dual, Quad, Neo (Lubuntu 12.04, Debian Jessie, UDOObuntu 2, Ubuntu Core 14.04)
-1. Raspberry Pi 1B + Pi 2 (Raspbian wheezy + jessie, Ubuntu 14.04)
+1. Raspberry Pi 1B + Pi 2 (Raspbian wheezy + jessie, Ubuntu 14.04) + Pi 3 (Raspbian jessie)
 1. ODROID C1 + U3 (Lubuntu 14.04)
 1. BeagleBone Black (Ubuntu 14.04)
 1. PcDuino v3 (Ubuntu 14.04)
