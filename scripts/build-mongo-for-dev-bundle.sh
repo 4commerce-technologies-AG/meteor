@@ -11,7 +11,7 @@ echo BUILDING MONGO "v$MONGO_VERSION" IN "$DIR"
 
 # Check that we are running on a universal environment, otherwise
 # stop and show info about default mongo binary downloads
-if [ -z "$METEOR_UNIVERSAL_FLAG" || "$METEOR_UNIVERSAL_FLAG" == "env" ]; then
+if [ -z "$METEOR_UNIVERSAL_FLAG" ] || [ "$METEOR_UNIVERSAL_FLAG" == "env" ]; then
     echo "We don't know how to build mongo for this architecture"
     exit 1
 fi
